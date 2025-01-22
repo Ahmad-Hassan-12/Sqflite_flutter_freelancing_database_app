@@ -1,4 +1,3 @@
-
 import 'package:freelancing_database_app/database_service.dart';
 import 'package:get/get.dart';
 
@@ -63,7 +62,7 @@ class HomeController extends GetxController {
       final db = await DatabaseService().database;
 
       gigs.removeAt(id);
-      
+
       await db.delete('gigs', where: 'id = ?', whereArgs: [id]);
       gigs.removeWhere((gig) => gig['id'] == id);
     } catch (e) {
@@ -71,12 +70,11 @@ class HomeController extends GetxController {
     }
   }
 
-  
   //
 
   @override
   void onInit() {
     super.onInit();
-    loadGigs(); // Load gigs when the controller initializes
+    loadGigs();
   }
 }

@@ -4,7 +4,7 @@ import 'package:freelancing_database_app/controller.dart';
 import 'package:freelancing_database_app/home.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }

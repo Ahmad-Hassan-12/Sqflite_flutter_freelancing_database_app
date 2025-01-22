@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +57,7 @@ class _AddGigScreenState extends State<AddGigScreen> {
       setState(() {
         _selectedImage = null;
       });
-
+      HomeController.to.update(['gigs']);
       Get.snackbar(
         'Success',
         'Gig added successfully!',
