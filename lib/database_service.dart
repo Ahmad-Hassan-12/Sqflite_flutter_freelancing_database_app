@@ -1,4 +1,3 @@
-
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -37,12 +36,13 @@ class DatabaseService {
           $_price TEXT NOT NULL,
           $_description TEXT NOT NULL
         )
-        ''');
+        '''); //database create ki h
       },
     );
     return database;
   }
 
+//database mein value add ki h
   Future<void> addValue({
     required String title,
     required String imagePath,
@@ -76,7 +76,7 @@ class DatabaseService {
     }
   }
 
-  /// Method to delete a gig by ID
+  /// delete a gig by ID
   Future<void> deleteGig(int id) async {
     try {
       final db = await database;
@@ -90,7 +90,7 @@ class DatabaseService {
     }
   }
 
-  /// Method to update a gig
+  /// update a gig
   Future<void> updateGig({
     required int id,
     required String title,
@@ -116,7 +116,8 @@ class DatabaseService {
     }
   }
 
-   static Future<void> deleteAllData() async {
+//delete total data of gig store jo h
+  static Future<void> deleteAllData() async {
     try {
       final db = await _instance.database;
       await db.delete(
@@ -127,5 +128,4 @@ class DatabaseService {
       print("Error deleting all data: $e");
     }
   }
-
 }
